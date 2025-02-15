@@ -1,0 +1,101 @@
+## FREIBRURG3 PARAMS
+rgb:
+  topic: "camera/rgb/image_color"
+  publish_periot: 0.33
+  publish_queue_size: 30
+  listen_periot : 10
+  frame_id: "kinect"
+  data_path: "/home/rag0n/Desktop/datas/data/rgbd/fr3_household_manuel/rgb_sync"
+  typeruntime: "bgr8"
+  typeshowtime: "bgr8"
+  
+depth:
+  topic : "camera/depth/image"  
+  publish_periot: 0.33
+  publish_queue_size: 30
+  listen_periot : 10
+  frame_id: "kinect"
+  data_path: "/home/rag0n/Desktop/datas/data/rgbd/fr3_household_manuel/depth_sync"
+  typeruntime: "32FC1"
+  typeshowtime: "32FC1"
+  
+caminfo:
+  topic: "camera/rgb/camera_info"
+  publish_periot: 0.33
+  publish_queue_size: 30
+  listen_periot: 10
+  frame_id: "kinect"
+
+  distortion_model: "plumb_bob" # rational_polynomial
+  # #document coefficents
+  # distortion_coefficients: [0.0,0.0,0.0,0.0,0.0]
+  # intrinsic_matrix: [567.6,0.0,324.7,
+  #                     0.0,570.2,250.1,
+  #                     0.0,0.0,0.0
+  # ]
+  distortion_coefficients: [0.0263704224826013,
+                              -0.10008645619921,
+                              0.00313758409632316,
+                              0.00242072236844001,
+                              0.0]
+  intrinsic_matrix: [
+          537.960321985614,0.0,319.183641033155,
+          0.0,539.597659163239,247.053820358135,
+          0.0,0.0,1.0 ]
+ 
+  r: [1.0,0.0,0.0,
+      0.0,1.0,0.0,
+      0.0,0.0,1.0]
+  
+  p: [535.43310546875,0.0,320.106652814575,
+      0.0,0.0,539.212524414062,
+      247.632132204719,0.0,0.0,
+      0.0,1.0,0.0]
+  
+  binning_x : 0
+  binning_y : 0
+  resolution: 
+    width: 640
+    height: 480
+  roi:
+    x_offset : 0
+    y_offset : 0
+    height : 0
+    width : 0
+    do_rectify : False
+
+bag_save_path: "/home/rag0n/Desktop/r0_workspace/bags"
+
+# # FREIBURG2 
+# data_read:
+
+#   Rgb_path: "/home/rag0n/Desktop/data/data/rgbd_dataset_freiburg2_pioneer_slam2/rgb_sync"
+#   depth_path: "/home/rag0n/Desktop/data/data/rgbd_dataset_freiburg2_pioneer_slam2/depth_sync"
+
+#   camera_info:
+#     frame_id: "kinect"
+#     resolution: 
+#       width: 1280
+#       height: 960
+#     distortion_model: "plumb_bob"
+#     distortion_coefficients: [0.2312,-0.7849,-0.0033,-0.0001,0.9172] 
+#     intrinsic_matrix: [520.9, 0.0, 325.1,
+#                         0.0, 521.0, 249.7,
+#                         0.0, 0.0, 1.0
+#                         ]
+  
+# topics:
+#   image_rgb: "camera/rgb/image_color"
+#   image_depth: "camera/depth/image"
+#   camera_info: "camera/rgb/camera_info"
+
+# publish_config:
+#   publish_periot: 0.33
+#   publish_queue_size: 30
+#   frame_id: "kinect"
+
+# subscription_config:
+#   rgb_sub_periot: 10
+#   depth_sub_periot: 10
+#   cam_info_sub_periot: 10
+
